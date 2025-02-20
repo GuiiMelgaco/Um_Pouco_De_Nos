@@ -83,25 +83,21 @@
             object-position: top;
         }
  
-        .prev, .next {
+        .click-area {
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
+            top: 0;-50%);
+        width: 50%;
+                height:100%;
             cursor: pointer;
-            font-size: 24px;
             z-index: 1; /* Garante que os botões fiquem acima das imagens */
         }
  
-        .prev {
-            left: 10px;
+        .left {
+            left: 0;
         }
  
-        .next {
-            right: 10px;
+        .right {
+            right: 0;
         }
  
         /* Estilos para o mapa */
@@ -298,8 +294,8 @@ moverSlide(0);
 <img src="imagens/foto41.jpeg" alt="Foto 41">
 <img src="imagens/foto42.jpeg" alt="Foto 42">
 </div>
-<button class="prev" onclick="moverSlide(-1)">&#10094;</button>
-<button class="next" onclick="moverSlide(1)">&#10095;</button>
+<button class="click-area left" onclick="moverSlide(-1)">&#10094;</button>
+<button class="click-area right" onclick="moverSlide(1)">&#10095;</button>
 </div>
  
     <div class="texto-justificado">
