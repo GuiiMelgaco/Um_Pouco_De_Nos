@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Um pouco de nós</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&family=ABeeZee&display=swap" rel="stylesheet">
+<style>
+        body {
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-size: 24px;
+            text-align: center;
+            background-color: #537578;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #fff;
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-size: 24px;
+        }
+        h2 {
+            color: #fff;
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-size: 30px;
+        }
+ 
+        .divisor {
+            width: 80%;
+            height: 2px;
+            background-color: #fff;
+            margin: 20px auto;
+        }
+ 
+        .contador {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px; /* Diminuído para reduzir a distância */
+            justify-items: center;
+            margin-top: 20px;
+            width: 90%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+ 
+        .bloco {
+            background-color: #FFFAED;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 80px;
+            font-size: 11px;
+            color: #555;
+            font-weight: bold;
+        }
+ 
+        .carrossel {
+            position: relative;
+            max-width: 600px;
+            margin: 30px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0.6, 0, 0, 0.6);
+        }
+ 
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+ 
+        .slides img {
+            min-width: 100%;
+            height: 500px; /* Altura fixa */
+            object-fit: cover;
+            object-position: center;
+            border-radius: 15px;
+        }
+ 
+        .slides img.top-position {
+            object-position: top;
+        }
+ 
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 1; /* Garante que os botões fiquem acima das imagens */
+        }
+ 
+        .prev {
+            left: 10px;
+        }
+ 
+        .next {
+            right: 10px;
+        }
+ 
+        /* Estilos para o mapa */
+        #map {
+            width: 95%;
+            height: 180px;
+            border-radius: 15px;
+            margin: 20px auto;
+            box-shadow: 0 4px 6px rgba(0.4, 0.4, 0.4, 0.4);
+        }
+ 
+        .texto-justificado {
+            font-size: 14px; /* Ajuste o tamanho conforme necessário */
+            text-align: justify;
+            margin: 20px auto;
+            width: 80%; /* Limita a largura do texto */
+            color: #fff;
+        }
+
+
+
+#raspadinha-container {
+    position: relative;
+    width: 90vw; /* 90% da largura da tela */
+    max-width: 800px;
+    height: 350px; /* Altura fixa */
+    margin: 0 auto;
+    box-shadow: 0px 4px 10px rgba(0.6, 0.6, 0.6, 0.6); /* Pequena sombra para destacar */
+    border-radius: 15px;
+    overflow: hidden; /* Garante que a sombra fique suave */
+}
+
+#raspadinha {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#conteudo-revelado {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#imagem-revelada {
+    width: 100%;
+    height: 70%; /* 70% da altura */
+    object-fit: cover;
+}
+
+#mensagem {
+    height: 30%; /* 30% da altura */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 10px;
+    margin: 0; /* Remove o espaçamento extra */
+}
+
+</style>
+</head>
+<body>
+<h2>Guilherme & Cíntia</h2>
+<img src="imagens/Fotocapa.jpg" alt="Foto da capa" style="width: 100%; max-width: 400px; height: 500px;border-radius: 15px;class= top-position">
+<div class="divisor"></div>
+<h1>Nossa história começou há</h1>
+<div class="contador">
+<div class="bloco" id="anos">Calculando...</div>
+<div class="bloco" id="meses">Calculando...</div>
+<div class="bloco" id="dias">Calculando...</div>
+<div class="bloco" id="horas">Calculando...</div>
+<div class="bloco" id="minutos">Calculando...</div>
+<div class="bloco" id="segundos">Calculando...</div>
+</div>
+<div class="divisor"></div>
+<h1>Onde nós nos conhecemos</h1>
+<img src="imagens/fotosesi.jpg" alt="Foto do sesi" style="width: 100%; height: 300px; border-radius: 15px;">
+<div class="texto-justificado">
+<p>Declaração final (Vou colocar ainda)</p>
+</div>
+<div class="divisor"></div>
+<h1>Local do primeiro beijo</h1>
+ 
+    <!-- Mapa do local do primeiro beijo (imagem estática) -->
+<div id="map">
+<img src="imagens/fotomapa.png" alt="Local do primeiro beijo" style="width: 95%; height: 180px; border-radius: 15px;">
+</div>
+ 
+    <script>
+        function atualizarContador() {
+            var inicio = new Date("2018-09-08T12:00:00");
+            var agora = new Date();
+ 
+            var diferenca = agora - inicio;
+ 
+            var segundosTotais = Math.floor(diferenca / 1000);
+            var minutosTotais = Math.floor(segundosTotais / 60);
+            var horasTotais = Math.floor(minutosTotais / 60);
+            var diasTotais = Math.floor(horasTotais / 24);
+ 
+            var anos = Math.floor(diasTotais / 365);
+            var meses = Math.floor((diasTotais % 365) / 30);
+            var dias = Math.floor((diasTotais % 365) % 30);
+            var horas = horasTotais % 24;
+            var minutos = minutosTotais % 60;
+            var segundos = segundosTotais % 60;
+ 
+            document.getElementById("anos").textContent = anos + " anos";
+            document.getElementById("meses").textContent = meses + " meses";
+            document.getElementById("dias").textContent = dias + " dias";
+            document.getElementById("horas").textContent = horas + " horas";
+            document.getElementById("minutos").textContent = minutos + " minutos";
+            document.getElementById("segundos").textContent = segundos + " segundos";
+        }
+ 
+        setInterval(atualizarContador, 1000);
+ 
+        let slideIndex = 0;
+
+function moverSlide(direction) {
+    const slides = document.querySelector('.slides');
+    const totalSlides = slides.children.length;
+    
+    slideIndex = (slideIndex + direction + totalSlides) % totalSlides;
+    slides.style.transform = "translateX(-" + slideIndex * 100 + "%)";
+
+    // Esconder o botão "voltar" na primeira imagem
+    document.querySelector('.prev').style.display = slideIndex === 0 ? 'none' : 'block';
+}
+
+// Garante que o botão "voltar" esteja oculto ao carregar a página
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector('.prev').style.display = 'none';
+});
+
+moverSlide(0);
+</script>
+ 
+    <div class="texto-justificado">
+<p>Declaração final (Vou colocar ainda)</p>
+</div>
+<div class="divisor"></div>
+<h1>Nós</h1>
+<div class="carrossel">
+<div class="slides">
+<img src="imagens/foto1.jpeg" alt="Foto 1">
+<img src="imagens/foto2.jpeg" alt="Foto 2">
+<img src="imagens/foto3.jpeg" alt="Foto 3">
+<img src="imagens/foto4.jpeg" alt="Foto 4">
+<img src="imagens/foto5.jpeg" alt="Foto 5">
+<img src="imagens/foto6.jpeg" alt="Foto 6">
+<img src="imagens/foto7.jpeg" alt="Foto 7">
+<img src="imagens/foto8.jpeg" alt="Foto 8">
+<img src="imagens/foto9.jpeg" alt="Foto 9">
+<img src="imagens/foto10.jpeg" alt="Foto 10">
+<img src="imagens/foto11.jpeg" alt="Foto 11">
+<img src="imagens/foto12.jpeg" alt="Foto 12">
+<img src="imagens/foto13.jpeg" alt="Foto 13">
+<img src="imagens/foto14.jpeg" alt="Foto 14">
+<img src="imagens/foto15.jpeg" alt="Foto 15">
+<img src="imagens/foto16.jpeg" alt="Foto 16">
+<img src="imagens/foto17.jpeg" alt="Foto 17">
+<img src="imagens/foto18.jpeg" alt="Foto 18">
+<img src="imagens/foto19.jpeg" alt="Foto 19">
+<img src="imagens/foto20.jpeg" alt="Foto 20">
+<img src="imagens/foto21.jpeg" alt="Foto 21">
+<img src="imagens/foto22.jpeg" alt="Foto 22">
+<img src="imagens/foto23.jpeg" alt="Foto 23">
+<img src="imagens/foto24.jpeg" alt="Foto 24">
+<img src="imagens/foto25.jpeg" alt="Foto 25">
+<img src="imagens/foto26.jpeg" alt="Foto 26">
+<img src="imagens/foto27.jpeg" alt="Foto 27">
+<img src="imagens/foto28.jpeg" alt="Foto 28">
+<img src="imagens/foto29.jpeg" alt="Foto 29">
+<img src="imagens/foto30.jpeg" alt="Foto 30">
+<img src="imagens/foto31.jpeg" alt="Foto 31" class = "top-position">
+<img src="imagens/foto32.jpeg" alt="Foto 32">
+<img src="imagens/foto33.jpeg" alt="Foto 33">
+<img src="imagens/foto34.jpeg" alt="Foto 34">
+<img src="imagens/foto35.jpeg" alt="Foto 35">
+<img src="imagens/foto36.jpeg" alt="Foto 36">
+<img src="imagens/foto37.jpeg" alt="Foto 37">
+<img src="imagens/foto38.jpeg" alt="Foto 38">
+<img src="imagens/foto39.jpeg" alt="Foto 39">
+<img src="imagens/foto40.jpeg" alt="Foto 40"class = "top-position">
+<img src="imagens/foto41.jpeg" alt="Foto 41">
+<img src="imagens/foto42.jpeg" alt="Foto 42">
+</div>
+<button class="prev" onclick="moverSlide(-1)">&#10094;</button>
+<button class="next" onclick="moverSlide(1)">&#10095;</button>
+</div>
+ 
+    <div class="texto-justificado">
+<p>Declaração final (Vou colocar ainda)</p>
+</div>
+
+        <div class="divisor"></div>
+
+<h1>Raspadinha</h1>
+<div id="raspadinha-container">
+    <canvas id="raspadinha"></canvas>
+    <div id="conteudo-revelado">
+        <img id="imagem-revelada" src="imagens/fotoairbnb.png" alt="Imagem Revelada">
+        <p id="mensagem">E é aqui que nossa história ganha um novo capítulo.<br>Te amo, minha pretinha</p>
+    </div>
+</div>
+
+
+<h1>Tudo no seu tempo</h1>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const canvas = document.getElementById("raspadinha");
+    const ctx = canvas.getContext("2d");
+    const container = document.getElementById("raspadinha-container");
+
+    // Ajusta o tamanho do canvas para cobrir a área corretamente
+    function ajustarCanvas() {
+        canvas.width = container.clientWidth;
+        canvas.height = container.clientHeight;
+        ctx.fillStyle = "#FFFAED"; // Cor da raspadinha
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    ajustarCanvas();
+
+    let raspando = false;
+
+    function pegarPosicao(event) {
+        const rect = canvas.getBoundingClientRect();
+        return {
+            x: (event.clientX || event.touches[0].clientX) - rect.left,
+            y: (event.clientY || event.touches[0].clientY) - rect.top
+        };
+    }
+
+    function raspar(event) {
+        if (!raspando) return;
+        const pos = pegarPosicao(event);
+        ctx.globalCompositeOperation = "destination-out"; // Apaga a camada
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y, 30, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+    // Eventos para mouse e toque
+    canvas.addEventListener("mousedown", () => raspando = true);
+    canvas.addEventListener("mouseup", () => raspando = false); // Não reseta mais
+    canvas.addEventListener("mousemove", raspar);
+    canvas.addEventListener("touchstart", () => raspando = true);
+    canvas.addEventListener("touchend", () => raspando = false);
+    canvas.addEventListener("touchmove", (event) => {
+        event.preventDefault();
+        raspar(event);
+    });
+});
+</script>
+
+
+</body>
+</html>
