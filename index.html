@@ -237,12 +237,12 @@ function moverSlide(direction) {
     slides.style.transform = "translateX(-" + slideIndex * 100 + "%)";
 
     // Esconder o botão "voltar" na primeira imagem
-    document.querySelector('.prev').style.display = slideIndex === 0 ? 'none' : 'block';
+    document.querySelector('.left').style.display = slideIndex === 0 ? 'none' : 'block';
 }
 
 // Garante que o botão "voltar" esteja oculto ao carregar a página
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector('.prev').style.display = 'none';
+    document.querySelector('.left').style.display = 'none';
 });
 
 moverSlide(0);
