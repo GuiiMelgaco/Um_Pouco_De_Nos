@@ -179,6 +179,17 @@
     margin: 0; /* Remove o espaçamento extra */
 }
 
+#contador-imagem {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 20px;
+        color: #fff
+        background: rgba(0,0,0,0.5);
+        padding:5px;
+        border-radius: 5px;
+}
+
 </style>
 </head>
 <body>
@@ -310,6 +321,7 @@ moverSlide(0);
 </div>
 <button class="click-area left" onclick="moverSlide(-1)" </button>
 <button class="click-area right" onclick="moverSlide(1)" </button>
+<div id="contador-imagem">1 de 5</div>
 </div>
  
     <div class="texto-justificado">
