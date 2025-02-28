@@ -321,7 +321,15 @@ moverSlide(0);
 </div>
 <button class="click-area left" onclick="moverSlide(-1)" </button>
 <button class="click-area right" onclick="moverSlide(1)" </button>
-<div id="contador-imagem">1 de 5</div>
+        let imagemIndex = 1;
+        let totalImg = 42;
+        if (imagemIndex <42){
+                <button class="click-area left" onclick="imagemIndex--" </button>
+                <button class="click-area right" onclick="imagemIndex++" </button>}
+        if (imagemIndex == 42{
+                <button class="click-area left" onclick="imagemIndex=1" </button>}
+document.getElementById("contador-imagem").innerHTML = `"${imagemIndex}" de "${totalImg}"`;
+
 </div>
  
     <div class="texto-justificado">
