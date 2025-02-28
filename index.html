@@ -260,7 +260,7 @@ moverSlide(0);
 </script>
 
 <script>
-        let fotoatual = 1;
+        var fotoatual = 1;
                 function incrementar(){        
                         if(fotoatual ===42){        
                                 fotoatual=1;
@@ -278,7 +278,10 @@ moverSlide(0);
                          atualizarValorDisplay();
                 }
                 function atualizarValorDisplay() {
-                        document.getElementById("fotoatualValor").textContent = fotoatual + " de 42";
+                       var valorDisplay document.getElementById("fotoatualValor");
+                        if (valorDisplay){
+                                valorDisplay.textContent = fotoatual + " / 42";
+                        }
                 }
 </script>
  
