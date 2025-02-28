@@ -179,16 +179,6 @@
     margin: 0; /* Remove o espaçamento extra */
 }
 
-#contador-imagem {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        font-size: 20px;
-        color: #fff
-        background: rgba(0,0,0,0.5);
-        padding:5px;
-        border-radius: 5px;
-}
 
 </style>
 </head>
@@ -273,7 +263,7 @@ moverSlide(0);
 <p>O que dizer desse dia? Um convite inesperado para passarmos o dia juntos no sítio, e que dificilmente sua mãe iria deixar você ir, porém por um milagre sua mãe deixou. Nós passamos aquele 8 de setembro como se já fossemos namorados, e o que antes tinha sido só selinho, tornou-se um beijo de verdade. O que senti aquele dia, eu nunca tinha sentido na vida, e nós já tinhamos a certeza que queriamos ficar juntos, e a partir daí se iniciou nossa história incrível.  Parecia que tudo estava se alinhando para nós, nosso destino sempre foi esse, eu te quero pra sempre, você é perfeita pra mim.</p>
 </div>
 <div class="divisor"></div>
-<h1>Nossa galerias</h1>
+<h1>Nossa galeria</h1>
 <div class="carrossel">
 <div class="slides">
 <img src="imagens/foto1.jpeg" alt="Foto 1">
@@ -321,15 +311,6 @@ moverSlide(0);
 </div>
 <button class="click-area left" onclick="moverSlide(-1)" </button>
 <button class="click-area right" onclick="moverSlide(1)" </button>
-        let imagemIndex = 1;
-        let totalImg = 42;
-        if (imagemIndex <42){
-                <button class="click-area left" onclick="imagemIndex--" </button>
-                <button class="click-area right" onclick="imagemIndex++" </button>}
-        if (imagemIndex == 42{
-                <button class="click-area left" onclick="imagemIndex=1" </button>}
-document.getElementById("contador-imagem").innerHTML = `"${imagemIndex}" de "${totalImg}"`;
-
 </div>
  
     <div class="texto-justificado">
